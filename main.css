@@ -1,0 +1,66 @@
+body{
+    font-family: sans-serif;
+    background-color:white;
+    background-image: url('background.png');
+    color:black;
+}
+
+.title{
+    font-size: 190%;
+}
+
+.subtitle{
+    font-size: 125%;
+}
+
+.subsubtitle{
+    font-size: 110%;
+}
+
+.slide-wrapper{
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.slide-wrapper p{
+    margin-bottom:8px;
+}
+
+.display_box{
+    /*display: inline-block;*/
+    border-radius: 0.15em;
+    padding:3px;
+    right:10px;
+    background-color:white;
+    margin-bottom:10px;
+    background-image: url('lighter_background.png');
+}
+
+
+.balance_display_bar p{
+    margin-top:8px;
+}
+
+.balance_container{
+    display:inline;
+}
+
+.balance{
+    display:inline;
+}
+
+.pricetextlabel{
+    display:inline;
+}
+
+.pricetext{
+    display:inline;
+}
+
+.table-cont{
+    width:100%;
+    overflow:scroll;
+}
+.table{
+    font-size:80%;
+}

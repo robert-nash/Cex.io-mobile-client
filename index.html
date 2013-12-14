@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="main.css" />
+		<link rel="stylesheet" href="idangerous.swiper.css">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1">
+		<title>Cex.io</title>
+	</head>
+	<body>
+		<script src="jquery.min.js"></script>
+		<script defer src="idangerous.swiper-2.4.min.js"></script>
+		<script src="main.js"></script>
+		<script src="hmac-sha256.js"></script>
+	    <div class="title">Cex.io</div>
+	    <div class="swiper-container">
+  <div class="swiper-wrapper">
+      <!--First Slide-->
+      <div class="swiper-slide"> 
+        <div class="slide-wrapper">
+            <div class="subtitle">Settings</div>
+            <p>Username</p>
+            <input type="text" id="api_username">
+            <p>API Key</p>
+            <input type="text" id="api_key">
+            <p>API Secret</p>
+            <input type="text" id="api_secret">
+            <p>Update Interval (Minutes)</p>
+            <input type="text" id="update_interval">
+            <input type="button" id="save_button" value="Save">
+        </div>
+      </div>
+      <div class="swiper-slide"> 
+        <div class="slide-wrapper">
+            <div class="subtitle">Open Orders</div>
+            <div class="table-cont">
+                <table class="table" id="order_table">
+                    <tr>
+                        <th>Commodity</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Cancel</th>
+                    </tr>
+            </table>
+            </div>
+        </div>
+      </div>
+      <!--Second Slide-->
+        <div class="swiper-slide">
+            <div class="slide-wrapper">
+                <div class="subtitle">GHS/BTC</div>
+                <div class="balance_bar" id="btc_ghs_balance_bar">
+                    <div class="balance_display_bar display_box" id="btc_ghs_balance_display_bar">
+                        <div class="subsubtitle">Balance</div>
+                        <div class="balance_container btc_balance_container">BTC: <div class="balance btc_balance" >0.00</div></div>
+                        <div class="balance_container ghs_balance_container">GHS: <div class="balance ghs_balance" >0.00</div></div>
+                    </div>
+                </div>
+                <div id="btc_ghs_buy_box">
+                    <div class="trade_display_box display_box" id="btc_ghs_buy_display_box">
+                        <div class="subsubtitle">Buy GHS</div>
+                        <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext btc_ghs_pricetext">0.00</div> BTC
+                        <p>Amount</p>
+                        <input type="text" id="btc_ghs_buy_amount">
+                        <p>Price</p>
+                        <input type="text" id="btc_ghs_buy_price">
+                        <input type="button" id="btc_ghs_buy_button" value="Buy" onclick="transaction('btc_ghs_buy')">
+                    </div>
+                </div>
+                <div id="btc_ghs_sell_box">
+                    <div class="trade_display_box display_box" id="btc_ghs_buy_display_box">
+                        <div class="subsubtitle">Sell GHS</div>
+                        <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext btc_ghs_pricetext">0.00</div> BTC
+                        <p>Amount</p>
+                        <input type="text" id="btc_ghs_sell_amount">
+                        <p>Price</p>
+                        <input type="text" id="btc_ghs_sell_price">
+                        <input type="button" id="btc_ghs_sell_button" value="Sell" onclick="transaction('btc_ghs_sell')">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-wrapper">
+                <div class="subtitle">NMC/BTC</div>
+                <div class="balance_bar" id="nmc_btc_balance_bar">
+                    <div class="balance_display_bar display_box" id="nmc_btc_balance_display_bar">
+                        <div class="subsubtitle">Balance</div>
+                        <div class="balance_container nmc_balance_container">NMC: <div class="balance nmc_balance" >0.00</div></div>
+                        <div class="balance_container btc_balance_container">BTC: <div class="balance btc_balance" >0.00</div></div>
+                    </div>
+                </div>
+                <div id="nmc_btc_buy_box">
+                    <div class="trade_display_box display_box" id="nmc_btc_buy_display_box">
+                        <div class="subsubtitle">Buy NMC</div>
+                        <div class="pricetextlabel">Price per NMC:</div> <div class="pricetext nmc_btc_pricetext">0.00</div> BTC
+                        <p>Amount</p>
+                        <input type="text" id="nmc_btc_buy_amount">
+                        <p>Price</p>
+                        <input type="text" id="nmc_btc_buy_price">
+                        <input type="button" id="nmc_btc_buy_button" value="Buy" onclick="transaction('nmc_btc_buy')">
+                    </div>
+                </div>
+                <div id="nmc_btc_sell_box">
+                    <div class="trade_display_box display_box" id="nmc_btc_buy_display_box">
+                        <div class="subsubtitle">Sell NMC</div>
+                        <div class="pricetextlabel">Price per NMC:</div> <div class="pricetext nmc_btc_pricetext">0.00</div> BTC
+                        <p>Amount</p>
+                        <input type="text" id="nmc_btc_sell_amount">
+                        <p>Price</p>
+                        <input type="text" id="nmc_btc_sell_price">
+                        <input type="button" id="nmc_btc_sell_button" value="Sell" onclick="transaction('nmc_btc_sell')">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Third Slide-->
+        <div class="swiper-slide">
+            <div class="slide-wrapper">
+                <div class="subtitle">GHS/NMC</div>
+                <div class="balance_bar" id="nmc_ghs_balance_bar">
+                    <div class="balance_display_bar display_box" id="nmc_ghs_balance_display_bar">
+                        <div class="subsubtitle">Balance</div>
+                        <div class="balance_container nmc_balance_container">NMC: <div class="balance nmc_balance" >0.00</div></div>
+                        <div class="balance_container ghs_balance_container">GHS: <div class="balance ghs_balance" >0.00</div></div>
+                    </div>
+                </div>
+                <div id="nmc_ghs_buy_box">
+                    <div class="trade_display_box display_box" id="nmc_ghs_buy_display_box">
+                        <div class="subsubtitle">Buy GHS</div>
+                        <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext nmc_ghs_pricetext">0.00</div> NMC
+                        <p>Amount</p>
+                        <input type="text" id="nmc_ghs_buy_amount">
+                        <p>Price</p>
+                        <input type="text" id="nmc_ghs_buy_price">
+                        <input type="button" id="btc_ghs_buy_button" value="Buy" onclick="transaction('nmc_ghs_buy')">
+                    </div>
+                </div>
+                <div id="nmc_ghs_sell_box">
+                    <div class="trade_display_box display_box" id="nmc_ghs_buy_display_box">
+                        <div class="subsubtitle">Sell GHS</div>
+                        <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext nmc_ghs_pricetext">0.00</div> NMC
+                        <p>Amount</p>
+                        <input type="text" id="nmc_ghs_sell_amount">
+                        <p>Price</p>
+                        <input type="text" id="nmc_ghs_sell_price">
+                        <input type="button" id="btc_ghs_sell_button" value="Sell" onclick="transaction('nmc_ghs_sell')">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+	</body>
+</html>

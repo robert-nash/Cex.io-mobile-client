@@ -193,6 +193,7 @@ function initialise(){
     var mySwiper = new Swiper('.swiper-container',{
         mode:'horizontal',
         initialSlide: 2,
+        simulateTouch: false,
     });  
     $('#save_button').click(save)
     if (localStorage.update_interval) {

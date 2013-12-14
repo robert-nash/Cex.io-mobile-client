@@ -10,5 +10,7 @@
     <description>
         A Cex.io client app.
     </description>
+    
+    <gap:plugin name="com.verso.cordova.clipboard" />
 
 </widget>

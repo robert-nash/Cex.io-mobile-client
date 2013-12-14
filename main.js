@@ -19,6 +19,10 @@ function handleTransaction(result){
     }
 }
 
+function pasteFunc(target){
+    window.plugins.paste(function (text) { $('#'+target).val(text) });
+}
+
 function transaction(id){
     var url,buyingtype,sellingtype,type,amount,price 
     if (id == 'btc_ghs_buy'){

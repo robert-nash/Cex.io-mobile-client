@@ -20,7 +20,7 @@ function handleTransaction(result){
 }
 
 function pasteFunc(target){
-    window.plugins.paste(function (text) { $('#'+target).val(text) });
+    window.plugins.clipboard.paste(function (text) { $('#'+target).val(text) });
 }
 
 function transaction(id){

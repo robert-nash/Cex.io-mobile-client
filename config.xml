@@ -12,7 +12,7 @@
     </description>
     <icon src="icon.png" width="512" height="512"/>
     <preference name="phonegap-version" value="3.1.0"/>
-    <gap:plugin name="com.verso.cordova.clipboard" />
-    <gap:plugin name="com.phonegap.plugins.barcodescanner" />
+    <gap:plugin name="com.verso.cordova.clipboard" version="0.1.0" />
+    <!--<gap:plugin name="com.phonegap.plugins.barcodescanner" />-->
 
 </widget>

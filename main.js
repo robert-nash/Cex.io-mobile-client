@@ -8,6 +8,7 @@ function save(){
     clearInterval(timer);
     timer = setInterval(update, (localStorage.update_interval *60000));
     update();
+    alert('Api details saved. Swipe right to view open orders and place new orders.')
 }
 
 function handleTransaction(result){
@@ -203,6 +204,9 @@ function initialise(){
     if (localStorage.update_interval) {
         timer = setInterval(update, (localStorage.update_interval *60000))
         update();
+    }
+    else{
+        alert('Swipe left twice to input your api details.')
     }
     $('.table').css('width',$('.slide-wrapper').width())
 }

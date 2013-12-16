@@ -86,10 +86,7 @@ sizes, pagination, etc.
     left:0;
     width:100%;
     height:90%;
-	/* Specify Swiper's Size: */
-
-	/*width:200px;
-	height: 100px;*/
+	overflow-y:scroll;
 }
 .swiper-slide {
 	/* Specify Slides's Size: */

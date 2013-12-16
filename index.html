@@ -30,18 +30,20 @@
       </div>
       <div class="swiper-slide"> 
         <div class="slide-wrapper">
-            <div class="subtitle">Open Orders</div>
-            <div class="table-cont">
-                <table class="table" id="order_table">
-                    <tr>
-                        <th>Commodity</th>
-                        <th>Type</th>
-                        <th>Price</th>
-                        <th>Amount</th>
-                        <th>Date</th>
-                        <th>Cancel</th>
-                    </tr>
-            </table>
+            <div class="slide-cont">
+                <div class="subtitle">Open Orders</div>
+                <div class="table-cont">
+                    <table class="table" id="order_table">
+                        <tr>
+                            <th>Commodity</th>
+                            <th>Type</th>
+                            <th>Price</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Cancel</th>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
       </div>
@@ -84,34 +86,36 @@
         </div>
         <div class="swiper-slide">
             <div class="slide-wrapper">
-                <div class="subtitle">NMC/BTC</div>
-                <div class="balance_bar" id="nmc_btc_balance_bar">
-                    <div class="balance_display_bar display_box" id="nmc_btc_balance_display_bar">
-                        <div class="subsubtitle">Balance</div>
-                        <div class="balance_container nmc_balance_container">NMC: <div class="balance nmc_balance" >0.00</div></div>
-                        <div class="balance_container btc_balance_container">BTC: <div class="balance btc_balance" >0.00</div></div>
+                <div class="slide-cont">
+                    <div class="subtitle">NMC/BTC</div>
+                    <div class="balance_bar" id="nmc_btc_balance_bar">
+                        <div class="balance_display_bar display_box" id="nmc_btc_balance_display_bar">
+                            <div class="subsubtitle">Balance</div>
+                            <div class="balance_container nmc_balance_container">NMC: <div class="balance nmc_balance" >0.00</div></div>
+                            <div class="balance_container btc_balance_container">BTC: <div class="balance btc_balance" >0.00</div></div>
+                        </div>
                     </div>
-                </div>
-                <div id="nmc_btc_buy_box">
-                    <div class="trade_display_box display_box" id="nmc_btc_buy_display_box">
-                        <div class="subsubtitle">Buy NMC</div>
-                        <div class="pricetextlabel">Price per NMC:</div> <div class="pricetext nmc_btc_pricetext">0.00</div> BTC
-                        <p>Amount</p>
-                        <input type="number" id="nmc_btc_buy_amount">
-                        <p>Price</p>
-                        <input type="number" id="nmc_btc_buy_price">
-                        <input type="button" id="nmc_btc_buy_button" value="Buy" onclick="transaction('nmc_btc_buy')">
+                    <div id="nmc_btc_buy_box">
+                        <div class="trade_display_box display_box" id="nmc_btc_buy_display_box">
+                            <div class="subsubtitle">Buy NMC</div>
+                            <div class="pricetextlabel">Price per NMC:</div> <div class="pricetext nmc_btc_pricetext">0.00</div> BTC
+                            <p>Amount</p>
+                            <input type="number" id="nmc_btc_buy_amount">
+                            <p>Price</p>
+                            <input type="number" id="nmc_btc_buy_price">
+                            <input type="button" id="nmc_btc_buy_button" value="Buy" onclick="transaction('nmc_btc_buy')">
+                        </div>
                     </div>
-                </div>
-                <div id="nmc_btc_sell_box">
-                    <div class="trade_display_box display_box" id="nmc_btc_buy_display_box">
-                        <div class="subsubtitle">Sell NMC</div>
-                        <div class="pricetextlabel">Price per NMC:</div> <div class="pricetext nmc_btc_pricetext">0.00</div> BTC
-                        <p>Amount</p>
-                        <input type="number" id="nmc_btc_sell_amount">
-                        <p>Price</p>
-                        <input type="number" id="nmc_btc_sell_price">
-                        <input type="button" id="nmc_btc_sell_button" value="Sell" onclick="transaction('nmc_btc_sell')">
+                    <div id="nmc_btc_sell_box">
+                        <div class="trade_display_box display_box" id="nmc_btc_buy_display_box">
+                            <div class="subsubtitle">Sell NMC</div>
+                            <div class="pricetextlabel">Price per NMC:</div> <div class="pricetext nmc_btc_pricetext">0.00</div> BTC
+                            <p>Amount</p>
+                            <input type="number" id="nmc_btc_sell_amount">
+                            <p>Price</p>
+                            <input type="number" id="nmc_btc_sell_price">
+                            <input type="button" id="nmc_btc_sell_button" value="Sell" onclick="transaction('nmc_btc_sell')">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -119,34 +123,36 @@
         <!--Third Slide-->
         <div class="swiper-slide">
             <div class="slide-wrapper">
-                <div class="subtitle">GHS/NMC</div>
-                <div class="balance_bar" id="nmc_ghs_balance_bar">
-                    <div class="balance_display_bar display_box" id="nmc_ghs_balance_display_bar">
-                        <div class="subsubtitle">Balance</div>
-                        <div class="balance_container nmc_balance_container">NMC: <div class="balance nmc_balance" >0.00</div></div>
-                        <div class="balance_container ghs_balance_container">GHS: <div class="balance ghs_balance" >0.00</div></div>
+                <div class="slide-cont">
+                    <div class="subtitle">GHS/NMC</div>
+                    <div class="balance_bar" id="nmc_ghs_balance_bar">
+                        <div class="balance_display_bar display_box" id="nmc_ghs_balance_display_bar">
+                            <div class="subsubtitle">Balance</div>
+                            <div class="balance_container nmc_balance_container">NMC: <div class="balance nmc_balance" >0.00</div></div>
+                            <div class="balance_container ghs_balance_container">GHS: <div class="balance ghs_balance" >0.00</div></div>
+                        </div>
                     </div>
-                </div>
-                <div id="nmc_ghs_buy_box">
-                    <div class="trade_display_box display_box" id="nmc_ghs_buy_display_box">
-                        <div class="subsubtitle">Buy GHS</div>
-                        <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext nmc_ghs_pricetext">0.00</div> NMC
-                        <p>Amount</p>
-                        <input type="number" id="nmc_ghs_buy_amount">
-                        <p>Price</p>
-                        <input type="number" id="nmc_ghs_buy_price">
-                        <input type="button" id="btc_ghs_buy_button" value="Buy" onclick="transaction('nmc_ghs_buy')">
+                    <div id="nmc_ghs_buy_box">
+                        <div class="trade_display_box display_box" id="nmc_ghs_buy_display_box">
+                            <div class="subsubtitle">Buy GHS</div>
+                            <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext nmc_ghs_pricetext">0.00</div> NMC
+                            <p>Amount</p>
+                            <input type="number" id="nmc_ghs_buy_amount">
+                            <p>Price</p>
+                            <input type="number" id="nmc_ghs_buy_price">
+                            <input type="button" id="btc_ghs_buy_button" value="Buy" onclick="transaction('nmc_ghs_buy')">
+                        </div>
                     </div>
-                </div>
-                <div id="nmc_ghs_sell_box">
-                    <div class="trade_display_box display_box" id="nmc_ghs_buy_display_box">
-                        <div class="subsubtitle">Sell GHS</div>
-                        <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext nmc_ghs_pricetext">0.00</div> NMC
-                        <p>Amount</p>
-                        <input type="number" id="nmc_ghs_sell_amount">
-                        <p>Price</p>
-                        <input type="number" id="nmc_ghs_sell_price">
-                        <input type="button" id="btc_ghs_sell_button" value="Sell" onclick="transaction('nmc_ghs_sell')">
+                    <div id="nmc_ghs_sell_box">
+                        <div class="trade_display_box display_box" id="nmc_ghs_buy_display_box">
+                            <div class="subsubtitle">Sell GHS</div>
+                            <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext nmc_ghs_pricetext">0.00</div> NMC
+                            <p>Amount</p>
+                            <input type="number" id="nmc_ghs_sell_amount">
+                            <p>Price</p>
+                            <input type="number" id="nmc_ghs_sell_price">
+                            <input type="button" id="btc_ghs_sell_button" value="Sell" onclick="transaction('nmc_ghs_sell')">
+                        </div>
                     </div>
                 </div>
             </div>

@@ -8,11 +8,6 @@
 		<title>Cex.io</title>
 	</head>
 	<body>
-	    <script src="phonegap.js"></script>
-		<script src="jquery.min.js"></script>
-		<script defer src="idangerous.swiper-2.4.min.js"></script>
-		<script src="main.js"></script>
-		<script src="hmac-sha256.js"></script>
 	    <div class="title">Cex.io</div>
 	    <div class="swiper-container">
   <div class="swiper-wrapper">
@@ -53,34 +48,36 @@
       <!--Second Slide-->
         <div class="swiper-slide">
             <div class="slide-wrapper">
-                <div class="subtitle">GHS/BTC</div>
-                <div class="balance_bar" id="btc_ghs_balance_bar">
-                    <div class="balance_display_bar display_box" id="btc_ghs_balance_display_bar">
-                        <div class="subsubtitle">Balance</div>
-                        <div class="balance_container btc_balance_container">BTC: <div class="balance btc_balance" >0.00</div></div>
-                        <div class="balance_container ghs_balance_container">GHS: <div class="balance ghs_balance" >0.00</div></div>
+                <div class="slide-cont">
+                    <div class="subtitle">GHS/BTC</div>
+                    <div class="balance_bar" id="btc_ghs_balance_bar">
+                        <div class="balance_display_bar display_box" id="btc_ghs_balance_display_bar">
+                            <div class="subsubtitle">Balance</div>
+                            <div class="balance_container btc_balance_container">BTC: <div class="balance btc_balance" >0.00</div></div>
+                            <div class="balance_container ghs_balance_container">GHS: <div class="balance ghs_balance" >0.00</div></div>
+                        </div>
                     </div>
-                </div>
-                <div id="btc_ghs_buy_box">
-                    <div class="trade_display_box display_box" id="btc_ghs_buy_display_box">
-                        <div class="subsubtitle">Buy GHS</div>
-                        <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext btc_ghs_pricetext">0.00</div> BTC
-                        <p>Amount</p>
-                        <input type="number" id="btc_ghs_buy_amount">
-                        <p>Price</p>
-                        <input type="number" id="btc_ghs_buy_price">
-                        <input type="button" id="btc_ghs_buy_button" value="Buy" onclick="transaction('btc_ghs_buy')">
+                    <div id="btc_ghs_buy_box">
+                        <div class="trade_display_box display_box" id="btc_ghs_buy_display_box">
+                            <div class="subsubtitle">Buy GHS</div>
+                            <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext btc_ghs_pricetext">0.00</div> BTC
+                            <p>Amount</p>
+                            <input type="number" id="btc_ghs_buy_amount">
+                            <p>Price</p>
+                            <input type="number" id="btc_ghs_buy_price">
+                            <input type="button" id="btc_ghs_buy_button" value="Buy" onclick="transaction('btc_ghs_buy')">
+                        </div>
                     </div>
-                </div>
-                <div id="btc_ghs_sell_box">
-                    <div class="trade_display_box display_box" id="btc_ghs_buy_display_box">
-                        <div class="subsubtitle">Sell GHS</div>
-                        <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext btc_ghs_pricetext">0.00</div> BTC
-                        <p>Amount</p>
-                        <input type="number" id="btc_ghs_sell_amount">
-                        <p>Price</p>
-                        <input type="number" id="btc_ghs_sell_price">
-                        <input type="button" id="btc_ghs_sell_button" value="Sell" onclick="transaction('btc_ghs_sell')">
+                    <div id="btc_ghs_sell_box">
+                        <div class="trade_display_box display_box" id="btc_ghs_buy_display_box">
+                            <div class="subsubtitle">Sell GHS</div>
+                            <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext btc_ghs_pricetext">0.00</div> BTC
+                            <p>Amount</p>
+                            <input type="number" id="btc_ghs_sell_amount">
+                            <p>Price</p>
+                            <input type="number" id="btc_ghs_sell_price">
+                            <input type="button" id="btc_ghs_sell_button" value="Sell" onclick="transaction('btc_ghs_sell')">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -157,5 +154,10 @@
         
     </div>
 </div>
+    <script src="phonegap.js"></script>
+	<script src="jquery.min.js"></script>
+	<script src="idangerous.swiper-2.4.min.js"></script>
+	<script src="main.js"></script>
+	<script src="hmac-sha256.js"></script>
 	</body>
 </html>

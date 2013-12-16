@@ -64,3 +64,9 @@ body{
 .table{
     font-size:80%;
 }
+
+.slide-cont{
+    height: 100%;
+    overflow-y: scroll;
+    position: absolute;
+}

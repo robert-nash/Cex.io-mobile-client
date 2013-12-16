@@ -198,7 +198,7 @@ function initialise(){
     var mySwiper = new Swiper('.swiper-container',{
         mode:'horizontal',
         initialSlide: 2,
-        simulateTouch: false,
+        // simulateTouch: false,
     });  
     $('#save_button').click(save)
     if (localStorage.update_interval) {
@@ -209,7 +209,14 @@ function initialise(){
         alert('Swipe left twice to input your api details.')
     }
     $('.table').css('width',$('.slide-wrapper').width())
+    $('.slide-cont').css('width',$('.slide-wrapper').width())
 }
+$( window ).resize(function() {
+    setTimeout(function() {
+    $('.table').css('width',$('.slide-wrapper').width())
+    $('.slide-cont').css('width',$('.slide-wrapper').width())
+    }, 0);
+});
 $(document).ready(function() {
 	initialise();
 });

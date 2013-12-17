@@ -211,7 +211,7 @@ function initialise(){
     var mySwiper = new Swiper('.swiper-container',{
         mode:'horizontal',
         initialSlide: 2,
-        simulateTouch: false,
+        //simulateTouch: false,
     });  
     $('#save_button').click(save);
     if (localStorage.update_interval) {
@@ -225,7 +225,6 @@ function initialise(){
     $('.slide-cont').css('width',$('.slide-wrapper').width());
     $('.order_price').keypress( totalUpdate );
     $('#refreshIcon').click(update);
-    totalUpdate();
 }
 $( window ).resize(function() {
     setTimeout(function() {

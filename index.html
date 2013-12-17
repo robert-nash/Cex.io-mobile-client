@@ -3,12 +3,14 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="main.css" />
 		<link rel="stylesheet" href="idangerous.swiper.css">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="initial-scale=1">
 		<title>Cex.io</title>
 	</head>
 	<body>
 	    <div class="title">Cex.io</div>
+	    Last updated:<div id="update-time">Never</div><i class="fa fa-refresh" id="refreshIcon"></i>
 	    <div class="swiper-container">
   <div class="swiper-wrapper">
       <!--First Slide-->
@@ -67,9 +69,10 @@
                             <div class="subsubtitle">Buy GHS</div>
                             <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext btc_ghs_pricetext">0.00</div> BTC
                             <p>Amount</p>
-                            <input type="number" id="btc_ghs_buy_amount">
+                            <input type="number" class="order_price" id="btc_ghs_buy_amount">
                             <p>Price</p>
-                            <input type="number" id="btc_ghs_buy_price">
+                            <input type="number" class="order_price" id="btc_ghs_buy_price">
+                            <div class="total-cont"><div class="totaltextlabel">Total: </div> <div class="totaltext">0.00000000</div></div>
                             <input type="button" id="btc_ghs_buy_button" value="Buy" onclick="transaction('btc_ghs_buy')">
                         </div>
                     </div>
@@ -78,9 +81,10 @@
                             <div class="subsubtitle">Sell GHS</div>
                             <div class="pricetextlabel">Price per GHS:</div> <div class="pricetext btc_ghs_pricetext">0.00</div> BTC
                             <p>Amount</p>
-                            <input type="number" id="btc_ghs_sell_amount">
+                            <input type="number" class="order_price" id="btc_ghs_sell_amount">
                             <p>Price</p>
-                            <input type="number" id="btc_ghs_sell_price">
+                            <input type="number" class="order_price" id="btc_ghs_sell_price">
+                            <div class="total-cont"><div class="totaltextlabel">Total: </div> <div class="totaltext">0.00000000</div></div>
                             <input type="button" id="btc_ghs_sell_button" value="Sell" onclick="transaction('btc_ghs_sell')">
                         </div>
                     </div>
@@ -106,6 +110,7 @@
                             <input type="number" id="nmc_btc_buy_amount">
                             <p>Price</p>
                             <input type="number" id="nmc_btc_buy_price">
+                            <div class="total-cont"><div class="totaltextlabel">Total: </div> <div class="totaltext">0.00000000</div></div>
                             <input type="button" id="nmc_btc_buy_button" value="Buy" onclick="transaction('nmc_btc_buy')">
                         </div>
                     </div>
@@ -117,6 +122,7 @@
                             <input type="number" id="nmc_btc_sell_amount">
                             <p>Price</p>
                             <input type="number" id="nmc_btc_sell_price">
+                            <div class="total-cont"><div class="totaltextlabel">Total: </div> <div class="totaltext">0.00000000</div></div>
                             <input type="button" id="nmc_btc_sell_button" value="Sell" onclick="transaction('nmc_btc_sell')">
                         </div>
                     </div>
@@ -143,6 +149,7 @@
                             <input type="number" id="nmc_ghs_buy_amount">
                             <p>Price</p>
                             <input type="number" id="nmc_ghs_buy_price">
+                            <div class="total-cont"><div class="totaltextlabel">Total: </div> <div class="totaltext">0.00000000</div></div>
                             <input type="button" id="btc_ghs_buy_button" value="Buy" onclick="transaction('nmc_ghs_buy')">
                         </div>
                     </div>
@@ -154,6 +161,7 @@
                             <input type="number" id="nmc_ghs_sell_amount">
                             <p>Price</p>
                             <input type="number" id="nmc_ghs_sell_price">
+                            <div class="total-cont"><div class="totaltextlabel">Total: </div> <div class="totaltext">0.00000000</div></div>
                             <input type="button" id="btc_ghs_sell_button" value="Sell" onclick="transaction('nmc_ghs_sell')">
                         </div>
                     </div>

@@ -8,12 +8,12 @@ function save(){
     clearInterval(timer);
     timer = setInterval(update, (localStorage.update_interval *60000));
     update();
-    alert('Api details saved. Swipe right to view open orders and place new orders.')
+    alert('Api details saved. Swipe right to view open orders and place new orders.');
 }
 
 function handleTransaction(result){
     if (result.id){
-        alert('Order placed')
+        alert('Order placed');
     }
     else {
         alert('Error, order not placed. Error given: '+result.error);
@@ -25,54 +25,54 @@ function pasteFunc(target){
 }
 
 function transaction(id){
-    var url,buyingtype,sellingtype,type,amount,price 
+    var url,buyingtype,sellingtype,type,amount,price;
     if (id == 'btc_ghs_buy'){
-        url = 'https://cex.io/api/place_order/GHS/BTC'
-        buyingtype = 'GHS'
-        sellingtype = 'BTC'
-        type='Buy'
-        amount = $('#'+id+'_amount').val()
-        price = $('#'+id+'_price').val()
+        url = 'https://cex.io/api/place_order/GHS/BTC';
+        buyingtype = 'GHS';
+        sellingtype = 'BTC';
+        type='Buy';
+        amount = $('#'+id+'_amount').val();
+        price = $('#'+id+'_price').val();
     }
     if (id == 'btc_ghs_sell'){
-        url = 'https://cex.io/api/place_order/GHS/BTC'
-        buyingtype = 'GHS'
-        sellingtype = 'BTC'
-        type='Sell'
-        amount = $('#'+id+'_amount').val()
-        price = $('#'+id+'_price').val()
+        url = 'https://cex.io/api/place_order/GHS/BTC';
+        buyingtype = 'GHS';
+        sellingtype = 'BTC';
+        type='Sell';
+        amount = $('#'+id+'_amount').val();
+        price = $('#'+id+'_price').val();
     }
     if (id == 'nmc_ghs_sell'){
-        url = 'https://cex.io/api/place_order/GHS/NMC'
-        buyingtype = 'GHS'
-        sellingtype = 'NMC'
-        type='Sell'
-        amount = $('#'+id+'_amount').val()
-        price = $('#'+id+'_price').val()
+        url = 'https://cex.io/api/place_order/GHS/NMC';
+        buyingtype = 'GHS';
+        sellingtype = 'NMC';
+        type='Sell';
+        amount = $('#'+id+'_amount').val();
+        price = $('#'+id+'_price').val();
     }
     if (id == 'nmc_ghs_buy'){
-        url = 'https://cex.io/api/place_order/GHS/NMC'
-        buyingtype = 'GHS'
-        sellingtype = 'NMC'
-        type='Buy'
-        amount = $('#'+id+'_amount').val()
-        price = $('#'+id+'_price').val()
+        url = 'https://cex.io/api/place_order/GHS/NMC';
+        buyingtype = 'GHS';
+        sellingtype = 'NMC';
+        type='Buy';
+        amount = $('#'+id+'_amount').val();
+        price = $('#'+id+'_price').val();
     }
     if (id == 'nmc_btc_buy'){
-        url = 'https://cex.io/api/place_order/NMC/BTC'
-        buyingtype = 'NMC'
-        sellingtype = 'BTC'
-        type='Buy'
-        amount = $('#'+id+'_amount').val()
-        price = $('#'+id+'_price').val()
+        url = 'https://cex.io/api/place_order/NMC/BTC';
+        buyingtype = 'NMC';
+        sellingtype = 'BTC';
+        type='Buy';
+        amount = $('#'+id+'_amount').val();
+        price = $('#'+id+'_price').val();
     }
     if (id == 'nmc_btc_sell'){
-        url = 'https://cex.io/api/place_order/NMC/BTC'
-        buyingtype = 'NMC'
-        sellingtype = 'BTC'
-        type='Sell'
-        amount = $('#'+id+'_amount').val()
-        price = $('#'+id+'_price').val()
+        url = 'https://cex.io/api/place_order/NMC/BTC';
+        buyingtype = 'NMC';
+        sellingtype = 'BTC';
+        type='Sell';
+        amount = $('#'+id+'_amount').val();
+        price = $('#'+id+'_price').val();
     }
     var nonce = getNonce();
     var signature = CryptoJS.HmacSHA256(nonce+localStorage.api_username+localStorage.api_key, localStorage.api_secret)
@@ -109,9 +109,9 @@ function updateBalance(response){
             'signature': CryptoJS.HmacSHA256(nonce+localStorage.api_username+localStorage.api_key, localStorage.api_secret).toString(),
         },updateBalance);
     }
-    $('.btc_balance').html(response.BTC.available)
-    $('.ghs_balance').html(response.GHS.available)
-    $('.nmc_balance').html(response.NMC.available)
+    $('.btc_balance').html(response.BTC.available);
+    $('.ghs_balance').html(response.GHS.available);
+    $('.nmc_balance').html(response.NMC.available);
 }
 
 function cancelOrder(id){
@@ -124,12 +124,12 @@ function cancelOrder(id){
             'id':id,
         },function(response){
             if(response===true){
-                alert('Order canceled.')
+                alert('Order canceled.');
             }
             else{
-                alert('Error:'+response)
+                alert('Error:'+response);
             }
-        })
+        });
     update();
 }
 
@@ -158,6 +158,7 @@ function getNonce(){
 }
 
 function update(){
+    $('#refreshIcon').addClass('fa-spin');
     var nonce = getNonce();
     $.post('https://cex.io/api/balance/', {
         'key': localStorage.api_key,
@@ -171,7 +172,7 @@ function update(){
         'nonce': nonce,
         'signature': CryptoJS.HmacSHA256(nonce+localStorage.api_username+localStorage.api_key, localStorage.api_secret).toString(),
 	},function(response){
-        updateOrders(response,'GHS/BTC')
+        updateOrders(response,'GHS/BTC');
 	});
 	var nonce = getNonce();
 	$.post('https://cex.io/api/open_orders/GHS/NMC', {
@@ -179,7 +180,7 @@ function update(){
         'nonce': nonce,
         'signature': CryptoJS.HmacSHA256(nonce+localStorage.api_username+localStorage.api_key, localStorage.api_secret).toString(),
 	},function(response){
-        updateOrders(response,'GHS/NMC')
+        updateOrders(response,'GHS/NMC');
 	});
 	var nonce = getNonce();
 	$.post('https://cex.io/api/open_orders/NMC/BTC', {
@@ -187,11 +188,23 @@ function update(){
         'nonce': nonce,
         'signature': CryptoJS.HmacSHA256(nonce+localStorage.api_username+localStorage.api_key, localStorage.api_secret).toString(),
 	},function(response){
-        updateOrders(response,'NMC/BTC')
+        updateOrders(response,'NMC/BTC');
 	});
-	$.get('https://cex.io/api/ticker/GHS/BTC',updatePriceBTC)
-	$.get('https://cex.io/api/ticker/GHS/NMC',updatePriceNMC)
-	$.get('https://cex.io/api/ticker/NMC/BTC',updatePriceNMCBTC)
+	$.get('https://cex.io/api/ticker/GHS/BTC',updatePriceBTC);
+	$.get('https://cex.io/api/ticker/GHS/NMC',updatePriceNMC);
+	$.get('https://cex.io/api/ticker/NMC/BTC',updatePriceNMCBTC).then(function(){
+        var now = new Date();
+        $('#refreshIcon').removeClass('fa-spin');
+        $('#update-time').html(' '+now.getHours()+':'+now.getMinutes());
+	});
+}
+
+function totalUpdate(event){
+    setTimeout(function() {
+        var parent = $(event.target).parent();
+        var values = parent.find( ".order_price" );
+        parent.find('.totaltext').html((values.eq(0).val() * values.eq(1).val()).toFixed(8));
+    }, 0);
 }
 
 function initialise(){
@@ -200,21 +213,24 @@ function initialise(){
         initialSlide: 2,
         simulateTouch: false,
     });  
-    $('#save_button').click(save)
+    $('#save_button').click(save);
     if (localStorage.update_interval) {
-        timer = setInterval(update, (localStorage.update_interval *60000))
+        timer = setInterval(update, (localStorage.update_interval *60000));
         update();
     }
     else{
-        alert('Swipe left twice to input your api details.')
+        alert('Swipe left twice to input your api details.');
     }
-    $('.table').css('width',$('.slide-wrapper').width())
-    $('.slide-cont').css('width',$('.slide-wrapper').width())
+    $('.table').css('width',$('.slide-wrapper').width());
+    $('.slide-cont').css('width',$('.slide-wrapper').width());
+    $('.order_price').keypress( totalUpdate );
+    $('#refreshIcon').click(update);
+    totalUpdate();
 }
 $( window ).resize(function() {
     setTimeout(function() {
-    $('.table').css('width',$('.slide-wrapper').width())
-    $('.slide-cont').css('width',$('.slide-wrapper').width())
+    $('.table').css('width',$('.slide-wrapper').width());
+    $('.slide-cont').css('width',$('.slide-wrapper').width());
     }, 0);
 });
 $(document).ready(function() {

@@ -9,6 +9,16 @@ body{
     font-size: 190%;
 }
 
+#update-time{
+    display:inline;
+}
+
+#refreshIcon{
+    margin-left:10px;
+    font-size:120%;
+    user-select: none;
+}
+
 .subtitle{
     font-size: 125%;
 }
@@ -53,6 +63,19 @@ body{
 }
 
 .pricetext{
+    display:inline;
+}
+
+.total-cont{
+    padding-top:10px;
+    padding-bottom:0;
+}
+
+.totaltext{
+    display:inline;
+}
+
+.totaltextlabel{
     display:inline;
 }
 
